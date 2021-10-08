@@ -506,6 +506,7 @@ body {
   width: 20px;
   height: 20px;
   fill: var(--social-links-color);
+  transition: fill 1000ms var(--transition-time-function);
 }
 .social-links-item {
   width: 44px;
@@ -527,7 +528,9 @@ body {
 .social-link {
   cursor: pointer;
   border-radius: 50%;
+  transition: background-color 1000ms var(--transition-time-function);
 }
+
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
@@ -536,7 +539,6 @@ body {
 .social-links-item .social-link:hover .icon,
 .social-links-item .social-link:focus .icon {
   fill: var(--primary-background-color);
-  background-color: var(--accent-color);
 }
 
 .clients-list {
