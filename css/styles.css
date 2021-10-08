@@ -374,6 +374,21 @@ body {
 .works-list > .works-item {
   margin-right: var(--card-set-gap);
   flex-basis: calc((100% / 3) - var(--card-set-gap));
+  position: relative;
+}
+
+.works-image-caption {
+  width: 370px;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-background-color);
+  font-weight: 700;
+  position: absolute;
+  bottom: 0;
 }
 
 .benefits-title {
