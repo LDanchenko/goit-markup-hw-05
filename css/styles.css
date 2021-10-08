@@ -557,6 +557,7 @@ body {
   height: 60px;
   width: 106px;
   fill: var(--social-links-color);
+  transition: fill 1000ms var(--transition-time-function);
 }
 
 .clients-list-item .client-link {
@@ -568,7 +569,9 @@ body {
 }
 .clients-list-item {
   margin-right: 30px;
+  transition: border 1000ms var(--transition-time-function);
 }
+
 .section-clients .section-title {
   margin-bottom: 50px;
 }
