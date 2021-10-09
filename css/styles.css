@@ -11,7 +11,7 @@
   --hero-gradient: rgba(47, 48, 58, 0.4);
   --social-links-color: #afb1b8;
   --transition-time-function: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-duration: 1000ms;
+  --transition-duration: 250ms;
 }
 
 html {
@@ -225,6 +225,10 @@ body {
   letter-spacing: 0.03em;
   border-radius: 4px;
   padding: 6px 22px;
+  transition: box-shadow var(--transition-duration)
+      var(--transition-time-function),
+    color var(--transition-duration) var(--transition-time-function),
+    background-color var(--transition-duration) var(--transition-time-function);
 }
 .btn:hover,
 .btn:focus {
@@ -431,6 +435,8 @@ body {
 .portfolio-item-link {
   color: inherit;
   display: block;
+  transition: box-shadow var(--transition-duration)
+    var(--transition-time-function);
 }
 
 .portfolio-list {
@@ -666,4 +672,29 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-right: 8px;
   margin-top: 8px;
+  cursor: pointer;
+}
+
+.portfolio-item-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-item-caption {
+  position: absolute;
+  top: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  height: 100%;
+  transition: transform var(--transition-duration)
+    var(--transition-time-function);
+}
+
+.portfolio-item-caption p {
+  color: var(--primary-background-color);
+  font-size: 18px;
+  line-height: 1.56;
+  padding: 63px 24px;
+}
+
+.portfolio-item:hover .portfolio-item-caption {
+  transform: translateY(-100%);
 }
