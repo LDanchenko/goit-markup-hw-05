@@ -11,6 +11,7 @@
   --hero-gradient: rgba(47, 48, 58, 0.4);
   --social-links-color: #afb1b8;
   --transition-time-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 1000ms;
 }
 
 html {
@@ -74,11 +75,11 @@ body {
 
 .link {
   text-decoration: none;
-  transition: color 1000ms var(--transition-time-function);
+  transition: color var(--transition-duration) var(--transition-time-function);
 }
 
 .site-contact-item .icon {
-  transition: fill 1000ms var(--transition-time-function);
+  transition: fill var(--transition-duration) var(--transition-time-function);
 }
 
 .list {
@@ -506,7 +507,7 @@ body {
   width: 20px;
   height: 20px;
   fill: var(--social-links-color);
-  transition: fill 1000ms var(--transition-time-function);
+  transition: fill var(--transition-duration) var(--transition-time-function);
 }
 .social-links-item {
   width: 44px;
@@ -528,7 +529,8 @@ body {
 .social-link {
   cursor: pointer;
   border-radius: 50%;
-  transition: background-color 1000ms var(--transition-time-function);
+  transition: background-color var(--transition-duration)
+    var(--transition-time-function);
 }
 
 .social-link:hover,
@@ -557,7 +559,7 @@ body {
   height: 60px;
   width: 106px;
   fill: var(--social-links-color);
-  transition: fill 1000ms var(--transition-time-function);
+  transition: fill var(--transition-duration) var(--transition-time-function);
 }
 
 .clients-list-item .client-link {
@@ -569,7 +571,7 @@ body {
 }
 .clients-list-item {
   margin-right: 30px;
-  transition: border 1000ms var(--transition-time-function);
+  transition: border var(--transition-duration) var(--transition-time-function);
 }
 
 .section-clients .section-title {
@@ -611,4 +613,57 @@ body {
 
 .page-footer-block .social-links-item .icon {
   fill: var(--primary-background-color);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity var(--transition-duration) var(--transition-time-function),
+    visibility var(--transition-duration) var(--transition-time-function);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  background: var(--primary-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  display: flex;
+  justify-content: flex-end;
+  transition: transform var(--transition-duration)
+    var(--transition-time-function);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.icon-close {
+  width: 11px;
+  height: 11px;
+}
+
+.button-close {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: var(--primary-background-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 8px;
+  margin-top: 8px;
 }
