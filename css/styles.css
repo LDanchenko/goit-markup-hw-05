@@ -112,7 +112,7 @@ body {
   background-color: var(--accent-color);
   border-radius: 2px;
   position: absolute;
-  bottom: 0;
+  bottom: -1.5px;
 }
 
 .site-nav .link:hover,
@@ -695,6 +695,7 @@ body {
   padding: 63px 24px;
 }
 
-.portfolio-item:hover .portfolio-item-caption {
+.portfolio-item-link:hover .portfolio-item-caption,
+.portfolio-item-link:focus .portfolio-item-caption {
   transform: translateY(-100%);
 }
